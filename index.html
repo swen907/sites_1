@@ -38,7 +38,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        /* Шапка */
         .header {
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
             border-radius: 0 0 32px 32px;
@@ -71,7 +70,6 @@
             margin: 1.5rem 0 12px 5px;
         }
 
-        /* Кнопка мессенджера */
         .btn {
             display: flex;
             align-items: center;
@@ -85,7 +83,7 @@
             transition: all 0.2s ease;
         }
 
-        .btn:hover { background: #f9f9f9; transform: translateY(-1px); }
+        .btn:active { transform: scale(0.98); }
 
         .btn-icon {
             width: 46px; height: 46px;
@@ -97,7 +95,7 @@
         .btn-title { font-size: 16px; font-weight: 600; color: var(--text-main); }
         .btn-sub { font-size: 13px; color: var(--text-secondary); }
 
-        /* Блок адреса */
+        /* Карточка адреса */
         .address-card {
             padding: 16px;
             background: #fcfcfc;
@@ -112,14 +110,14 @@
         .address-info h3 { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
         .address-info p { font-size: 13px; color: var(--text-secondary); }
 
-        /* Карта */
+        /* Контейнер Яндекс Карт */
         .map-wrapper {
             width: 100%;
-            height: 300px;
+            height: 320px;
             border-radius: var(--radius);
             overflow: hidden;
             border: 1px solid var(--border);
-            position: relative;
+            filter: grayscale(0.2); /* Легкий эффект для стиля */
         }
 
         .footer {
@@ -136,7 +134,7 @@
 <div class="page">
     <div class="header">
         <div class="header-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6-3.8 3.8a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8 1.6 1.6a1 1 0 0 0 1.4 0l1.6-1.6a1 1 0 0 0 0-1.4L14.7 6.3z"/>
             </svg>
         </div>
@@ -153,37 +151,35 @@
             </div>
             <div class="btn-text">
                 <div class="btn-title">Telegram</div>
-                <div class="btn-sub">Написать мастеру</div>
+                <div class="btn-sub">Записаться на ремонт</div>
             </div>
         </a>
 
-        <div class="section-label">Как нас найти</div>
+        <div class="section-label">Наш адрес</div>
 
         <div class="address-card">
-            <div style="color: #e53935; margin-top: 2px;">
+            <div style="color: #f44336; margin-top: 2px;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
             </div>
             <div class="address-info">
                 <h3>Тюмень, ул. Жуковского, 26</h3>
-                <p>Ежедневно 09:00 – 18:00</p>
+                <p>Пн-Пт: 09:00 – 18:00</p>
             </div>
         </div>
 
         <div class="map-wrapper">
             <iframe 
-                src="https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%7B%22lat%22%3A57.173954%2C%22lon%22%3A65.641377%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22tyumen%22%7D%2C%22org%22%3A%2270000001021153021%22%7D" 
+                src="https://yandex.ru/map-widget/v1/?ll=65.641377%2C57.173954&z=16&pt=65.641377%2C57.173954%2Cpm2rdl" 
                 width="100%" 
                 height="100%" 
                 frameborder="0" 
-                style="border:0;" 
-                allowfullscreen="">
+                allowfullscreen="true">
             </iframe>
         </div>
     </div>
 
     <div class="footer">
         <p>© 2026 СЛ компани</p>
-        <p style="font-size: 10px; margin-top: 5px; opacity: 0.7;">Солнечный проезд, Тюмень</p>
     </div>
 </div>
 
