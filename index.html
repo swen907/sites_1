@@ -56,7 +56,7 @@
             border: 1px solid rgba(255,255,255,0.3);
         }
 
-        .header h1 { font-size: 26px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.5px; }
+        .header h1 { font-size: 26px; font-weight: 600; margin-bottom: 6px; }
         .header p { font-size: 14px; opacity: 0.9; }
 
         .content { padding: 1.5rem 1.2rem; }
@@ -70,6 +70,7 @@
             margin: 1.5rem 0 12px 5px;
         }
 
+        /* Универсальный стиль кнопок */
         .btn {
             display: flex;
             align-items: center;
@@ -110,14 +111,12 @@
         .address-info h3 { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
         .address-info p { font-size: 13px; color: var(--text-secondary); }
 
-        /* Контейнер Яндекс Карт */
         .map-wrapper {
             width: 100%;
-            height: 320px;
+            height: 300px;
             border-radius: var(--radius);
             overflow: hidden;
             border: 1px solid var(--border);
-            filter: grayscale(0.2); /* Легкий эффект для стиля */
         }
 
         .footer {
@@ -155,6 +154,26 @@
             </div>
         </a>
 
+        <a href="https://tamtam.chat/YOUR_USERNAME" class="btn" target="_blank">
+            <div class="btn-icon" style="background: #fff3e0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#f57c00"><path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm3.293 6.293a1 1 0 0 0-1.414 0L12 10.172 10.121 8.293a1 1 0 0 0-1.414 1.414L10.586 11.586l-1.879 1.879a1 1 0 0 0 1.414 1.414L12 12.999l1.879 1.88a1 1 0 0 0 1.414-1.414l-1.88-1.879 1.88-1.88a1 1 0 0 0 0-1.413z"/></svg>
+            </div>
+            <div class="btn-text">
+                <div class="btn-title">Мессенджер</div>
+                <div class="btn-sub">Написать в ТамТам (Макс)</div>
+            </div>
+        </a>
+
+        <a href="mailto:info@sl-company.ru" class="btn" target="_blank">
+            <div class="btn-icon" style="background: #f5f5f5;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#616161"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div class="btn-text">
+                <div class="btn-title">Почта</div>
+                <div class="btn-sub">Написать нам письмо</div>
+            </div>
+        </a>
+
         <div class="section-label">Наш адрес</div>
 
         <div class="address-card">
@@ -170,10 +189,7 @@
         <div class="map-wrapper">
             <iframe 
                 src="https://yandex.ru/map-widget/v1/?ll=65.641377%2C57.173954&z=16&pt=65.641377%2C57.173954%2Cpm2rdl" 
-                width="100%" 
-                height="100%" 
-                frameborder="0" 
-                allowfullscreen="true">
+                width="100%" height="100%" frameborder="0" allowfullscreen="true">
             </iframe>
         </div>
     </div>
