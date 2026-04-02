@@ -70,6 +70,7 @@
             margin: 1.5rem 0 10px 5px;
         }
 
+        /* Кнопки мессенджеров */
         .btn {
             display: flex;
             align-items: center;
@@ -95,37 +96,27 @@
         .btn-title { font-size: 16px; font-weight: 600; color: var(--text-main); }
         .btn-sub { font-size: 13px; color: var(--text-secondary); }
 
-        /* СПЕЦИАЛЬНЫЕ СТИЛИ ДЛЯ МОДУЛЯ 2ГИС */
-        .callout._module_firmCallout {
-            padding: 15px !important;
-            font-size: 13px !important;
-            background: #fafafa !important;
-            border-radius: var(--radius) !important;
-            border: 1px solid var(--border) !important;
-            box-shadow: none !important;
+        /* Блок адреса (инфо-модуль) */
+        .info-module {
+            padding: 15px;
+            background: #fafafa;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            margin-bottom: 15px;
         }
 
-        .callout__address { font-weight: 600 !important; font-size: 14px !important; margin-bottom: 4px !important; }
-        .callout__phone { font-weight: 700 !important; color: var(--color-primary) !important; margin-bottom: 8px !important; }
-        .callout__payment, .callout__photo, .callout__addressComment { display: none !important; }
-        
-        .callout__footer {
-            margin-top: 12px !important;
-            padding-top: 12px !important;
-            border-top: 1px solid var(--border) !important;
-            display: flex !important;
-            gap: 8px !important;
-        }
+        .info-address { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+        .info-phone { font-weight: 700; color: var(--color-primary); margin-bottom: 5px; }
+        .info-hours { font-size: 13px; color: var(--text-secondary); }
 
-        .callout__btn, .fromTo__btn {
-            background: var(--color-primary) !important;
-            color: #fff !important;
-            padding: 8px !important;
-            border-radius: 10px !important;
-            font-size: 11px !important;
-            text-align: center !important;
-            text-decoration: none !important;
-            flex: 1 !important;
+        /* КОНТЕЙНЕР КАРТЫ (Полноценный размер) */
+        .map-container {
+            width: 100%;
+            height: 250px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-top: 10px;
         }
 
         .footer {
@@ -153,30 +144,29 @@
     <div class="content">
         <div class="section-label">Связаться с нами</div>
         
-        <a href="https://t.me/YOUR_BOT_USERNAME" class="btn">
+        <a href="https://t.me/YOUR_BOT_USERNAME" class="btn" target="_blank">
             <div class="btn-icon" style="background: #e1f5fe;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#039be5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
             </div>
             <div>
                 <div class="btn-title">Telegram</div>
-                <div class="btn-sub">Записаться на ремонт</div>
+                <div class="btn-sub">Записаться через бота</div>
             </div>
         </a>
 
-        <div class="section-label">Наш адрес и контакты</div>
+        <div class="section-label">Где мы находимся</div>
 
-        <div id="module-1-1-1" class="callout _module_firmCallout">
-            <address class="callout__address">улица Жуковского, 26</address>
-            <div class="callout__phone">+7 (3452) 57‒54‒57</div>
-            <div class="callout__workhours">
-                <a href="#" class="callout__scheduleToday">Сегодня 09:00–18:00</a>
+        <div class="info-module">
+            <div class="info-address">Тюмень, ул. Жуковского, 26</div>
+            <div class="info-phone">+7 (3452) 57‒54‒57</div>
+            <div class="info-hours">Пн-Пт: 09:00–18:00 (Обед 13-14)</div>
+            
+            <div class="map-container">
+                <iframe
+                    src="https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%7B%22lat%22%3A57.173954%2C%22lon%22%3A65.641377%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22tyumen%22%7D%2C%22org%22%3A%2270000001021153021%22%7D"
+                    width="100%" height="100%" frameborder="0">
+                </iframe>
             </div>
-            <footer class="callout__footer">
-                <a href="http://2gis.ru/tyumen/firm/70000001021153021" target="_blank" class="callout__btn">Инфо</a>
-                <div id="module-1-1-1-1" class="fromTo _context_callout" style="display: flex; gap: 5px; flex: 1;">
-                    <a target="_blank" href="http://2gis.ru/tyumen/center/65.641377,57.174077/zoom/16/routeTab/rsType/bus/to/65.641353,57.174077" class="fromTo__btn">Сюда</a>
-                </div>
-            </footer>
         </div>
     </div>
 
