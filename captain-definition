@@ -2,6 +2,7 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM nginx:alpine",
+    "ARG CAPROVER_GIT_COMMIT_SHA",
     "COPY ./index.html /usr/share/nginx/html/index.html",
     "EXPOSE 80"
   ]
