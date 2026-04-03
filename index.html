@@ -1,202 +1,82 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СЛ компани — Сервисный центр</title>
-    <style>
-        :root {
-            --font-sans: 'Segoe UI', Roboto, system-ui, sans-serif;
-            --color-bg-main: #f5f7fa;
-            --color-bg-card: #ffffff;
-            --color-primary: #1a6fc4;
-            --color-primary-dark: #0d4a8a;
-            --text-main: #1a1a1a;
-            --text-secondary: #666666;
-            --text-muted: #999999;
-            --border: #eeeeee;
-            --radius: 24px;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body { 
-            font-family: var(--font-sans); 
-            background-color: var(--color-bg-main); 
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        .page {
-            width: 100%;
-            max-width: 420px;
-            background: var(--color-bg-card);
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .header {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-            border-radius: 0 0 32px 32px;
-            padding: 3rem 1.5rem 2.5rem;
-            text-align: center;
-            color: #fff;
-        }
-
-        .header-icon {
-            width: 64px; height: 64px;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 1.2rem;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .header h1 { font-size: 26px; font-weight: 600; margin-bottom: 6px; }
-        .header p { font-size: 14px; opacity: 0.9; }
-
-        .content { padding: 1.5rem 1.2rem; }
-
-        .section-label {
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 1.5rem 0 12px 5px;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 16px;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            background: var(--color-bg-card);
-            text-decoration: none;
-            margin-bottom: 12px;
-            transition: all 0.2s ease;
-        }
-
-        .btn:active { transform: scale(0.98); }
-
-        .btn-icon {
-            width: 46px; height: 46px;
-            border-radius: 14px;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
-            overflow: hidden; /* Чтобы логотип не вылезал */
-        }
-
-        .btn-title { font-size: 16px; font-weight: 600; color: var(--text-main); }
-        .btn-sub { font-size: 13px; color: var(--text-secondary); }
-
-        .address-card {
-            padding: 16px;
-            background: #fcfcfc;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .address-info h3 { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
-        .address-info p { font-size: 13px; color: var(--text-secondary); }
-
-        .map-wrapper {
-            width: 100%;
-            height: 300px;
-            border-radius: var(--radius);
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-
-        .footer {
-            margin-top: auto;
-            padding: 2rem 1rem;
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Скоро открытие</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+    .card {
+      text-align: center;
+      padding: 3rem 2rem;
+      max-width: 480px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      color: #a0c4ff;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(135deg, #fff 0%, #a0c4ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #a0c4ff;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes pulse {
+      0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+      40% { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
-
-<div class="page">
-    <div class="header">
-        <div class="header-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6-3.8 3.8a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8 1.6 1.6a1 1 0 0 0 1.4 0l1.6-1.6a1 1 0 0 0 0-1.4L14.7 6.3z"/>
-            </svg>
-        </div>
-        <h1>СЛ компани</h1>
-        <p>Ремонт цифровой техники в Тюмени</p>
+  <div class="card">
+    <div class="badge">Скоро</div>
+    <h1>Сайт в разработке</h1>
+    <p>Мы работаем над чем-то интересным.<br>Совсем скоро здесь всё будет готово.</p>
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
     </div>
-
-    <div class="content">
-        <div class="section-label">Связаться с нами</div>
-        
-        <a href="https://t.me/YOUR_BOT_USERNAME" class="btn" target="_blank">
-            <div class="btn-icon" style="background: #e1f5fe;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#039be5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-            </div>
-            <div class="btn-text">
-                <div class="btn-title">Telegram</div>
-                <div class="btn-sub">Написать в Telegram</div>
-            </div>
-        </a>
-
-        <a href="https://tamtam.chat/YOUR_USERNAME" class="btn" target="_blank">
-            <div class="btn-icon" style="background: #f5f5f5;">
-                <img src="data:image/png;base64,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/c/89m//5f8Xn8Rfx//0f//6//C//X/38//z//PfvP8//8//9/9m+b/5f/f//R///f//r/mff/vX+r9/9Zf+9//+/+Bv//p//T//w/8H/4Y3b/j/5N/6/u/r/f/w95/fS/4X//7+e+U/4H/77+f+778HfvD/K//xT7//e7/353//L/8//90f4Ff/e+f7P/S+L76nOv5u95Y/u/XNfH5X/59//60//F/+vfy//L/8N8f9b//Nf3Pc//bv9X973//mN/+v8f96v8L3v6/b/93+459847/537//z7//f/6ff7/53+0/+W9e/P9P/L0v3p8NfK/3v9wS///D4mff//n+n+mX/e9fD77X+fWOf5f//1+c///C/7/fE/i/xf/D7wX86wXve7G//vEX4/uX9A/u6Q/f6w/f+w/+N//tv/P//jv/I7/zn/47/+l/8p/9//v5//7D/Gf//3/+43/5P+f///88///X5X7/fN+P97ffB/H+Of5uBby/GPC+Ivhzvfj9VfyfV/H//6rxV7/fE9v77X8GfnU3H7D7L3/L/p8G//39B54G/v79R/qff7A+8KkXfOpH8C+u4C/+3//1L/2/3//rf9z7//8D/X/8P/0//D/8b///f7//N9f/P8///3X/X9X/T7+v/0//L/85/3+/Nf7nN//z34Y//9Xf/U+P1//47+f447/ff894ffv7b6r9fRnfK+5vX/5v6W9u/2//0P//b376+79f3X6fPz9w7/uTf+D59/iX7f9x/Y/j//X//39//zf37//5t//zP97w//nN/1b/H7//1f/H//f/R/4f//+/9//p/9X/Z+//0/8T/m//O+77W8f/9b47e8P//q3v5/m3w3/O3t///v9m/7+Nf378//qX/4e5e/mX/Vv5//Tf3N//L///f/v6pfnvX7p/73KffT/6/Uff//5Ofm/797//3b++7HeX+Xb99bXvIbwf2fXN7X7O3iXwM1v8G7/9fT/eD47bA79//55w//t4ffH/+Y3u375Y3zuvXwS+vN/X//z+S7b7D//3X9z74v4Xf+vS/m+F//vD/+H//v577ftj+XfP8y//S//T9z/Of3/8Mfd7/i/44/+Z//8bV/ofTqG7n+5+uvvp7qc7ne50p9Od7nS6051Od7rT6U6nO93pdKcz3eY7M7f6Xp68b693H45fV4cff5N9T8fP6XjtDX7SfvLue6zjz3v/Bv/iP9uS84WdY+K8XgL41fP5p/jYp+F8Y87f3Dlf4HMe4LPbOOf9D/jUj/DJ5wM/9p3Op34XfHoj+NRPgO89CHyv888v4Gtfge896Z9X4X9u4e9O+LeP/9L/5vHfin/j//79X/yvX5D//r8n/+N/j//O//u/vX55+bf+X7//N//74Yf6+U/m3//18X998b/4f//7+p//7f//b87//Hfe84N9ffvX//7+e/L9ff6H8OfwY/H9H8P//Z//7f/+f7Of3P/v//mff/t//p///b/8//6ff+8X//7eFv+7O3/f+/OfXb8f9/wL/o1+/6b44985//X/Pfv/L/8Xv///3//+H//5H/C7Vv+G//6Of9f6n//u/v1v/uYv/+9+A//+X+f37f95w7/v/3p9X4//8Q8++P7Of3uB7+H/f/+9/vC/fvf7//P/39//z//v/znPf+S//P/8977/W17+vX/4t/8f5ff+b/+Lf/tf///9H/5P5+/5+P/8n/8v//n/wX/57997H35+wN+/wU83gf91/f7w+Yv/85/+vXb6Zf++T+8Fv7b/Uv/L3Wz58//b7wP//N3X+48/8G/g//b+DfxvvtYffuD3f//7/93f+X+d/80//K//m//+/98r//N///e/X/N//3f/+P/77v+/9w986Pf+Q//u/Xn4G7743fO5f+/+wM+Xfv/Xh58/9Pn18PP965//A594D742/v77wPcffP/Bv+/x9//fH7wEH95/+AF48f8/vN/A37//4AL8B//4B8D3H97/uL+Bv+996n/4f/gHn/of/l//77//T3wW8YfvXf/H3v9H4m+t6P/5U//97f/R+Dff64n9B362/vDDe/fH3v/tH+v4478f6Y//v7/xO/uNf4/4vX5xP9m//M64Xf9+Uf/O9eJ///6//3/w9z4Hfv+/uP/vffH+ff+H6//8e//vA//+b/D/+S///X+n/7v/p46/p9//O7D+77//7/8A//m//4e+vAbe8b87fk29/+T4B2f//e7eH5//7u///b/7//O//s//O//Xv338//pX+H/t9wH92x9+p7X6/V5//F7tXv6f9ff//G/+3//xX/+ff89849//5//Xv5f/9r/X7/97x7/2u+Pf63fH//b9nvw/9V7/O9f977p/wXv74v7Xfe1bXNe8+f01Pr9//5Wv6N//fX/+m39v/7978U//3vN7b3R/93p+77X//i/89Xv74X7uU/+m93/6/5eO31fxfxv/9f+W/54VvrV6vX//V43XvPr785r9muf/X+f/+Wf+5z8b//m//0X/H//R/z3+//+V/+W/6P83//L/8//8O/+v+X/9v+eF//r/wSfx/+b/3e7X6/9N8N5X77Uf7uU//b//iN7v/n//3Y/H52v2f5y93e9//h9uA9/rfuD+r5fA//3//S/of7+9pX/H528D/y9X/m7X//P/9+4/fCj6v/7f4f/H7t//r//Lfw/9O+b/2e//P/7w//Gf+v/97//t7/X7vX/tYn9/rY6/pzt/Tn/0ffv//Uv7v//9/0X/96/m/+H/7f9z//rN+9///P/6//X/e//eNfp/7N83/889X//b///f//r3/Of//v9H/B79X/D/8HvX+w/uN//t/w9+j/j3b/7n//7v79Uf/7/fHP9+Xv8v9r/fFP9+Vf/+Xv9uAt/7t//Of3vfv7/9f6z1D/9H/fH/+h/8u1b/fP9uVf97V/j9Of7W4fdu8f9iAt+7xf9b4Wv98Xt3/P7F///H///+//65+//1b4f/3/+F+P//P3b/Gv+/D793i//Xfxf87hb9L4L/+n+/S/3P+I//v79//5WvqI5/75b//d9YvV//94z/v4X/9//L/8//v85/8796/z5/f8f//D/8//P/v///6//P/9///f85/6/r/5//r7v7X//fA/e9v5b/X/wL+I//r7s73elOd7rTne50p9Od7nS605lud8PpnW73w6V35v0GfL8Xzndm7u4NfnAnvHcGzvvB+W7h/Ab4Tge89y5wvjvO9y7wvXfA94p7j7W4F+MLX4T37oX3O/Aeu8G9DjjfA/C9B/B5H/C5D8B33wXBezeE570bXngPfD64B553b4DnPXiP/A483gPweQ/+H4f4bzz+f+z9b7j//V+v//5f+Xv7XfC74Pf9O/H5fRve+/H4fhfcu/fA97vwd7sb//fF+59w778b8H995+X2f9/+5XrfXve5Wre/Vve5rXUf97Uf3Hq/C9+7F/D/+N+OfwXfv47/u97/Nvy9+Rbw3ofXve4rXv+9v/K78P967114//0G+D4P4N8Nf/9e4H//pP/5Wvep469qfP712n/+u/t+7Uff++f4r+B/93/p//5X9n96fBf+/L/x//S7rfD/Y/z/4Xf9+w1///6v7H4D/+v4N4L/F+/D3fS4N//P8d85f83//+/w3/8H+P/8n/++G/B/4M9/64Z/b3/t/yP4M7u//5Yf1/L/8W/89/+Dfx/+7b//F/C/+L9f3v+vFfwffN//bXhv9/u//f8I//ff5/f+E/B/5v/+r//X/W39H2/0b4R/Of9N/R8X838A+z///X/Nf///9H/5P9f5m/O+X3n//7X6F//v//3/+K9Uf4D//v+E/+u/m4X/D7/Ff//f+X//x/45X/A//4/+zP9u9e/5N//b/xv//H//H//lvw3/P6j9/xf9L+C//9/x/8b/4f/9H/9N+3/+Zf/7X9t/rf8X8O8f///9X/+P7z/g/6Lw//zX/zV/3f/7N//m3///4f/6P93w/wfs/9/0//v/H//lvw//P6v/1/b/Wv9//O/+v/9X///+V/b/Wv/f///X/6X+N/8N//+v9X/8Xv///3///7fVv+eF/w9U/7//Tf3f7X//X6r/zv/3f7//B7P//f///D+L/p///+H///+G/+v+Z///7ffF//f//H9W///t/wv//6P///7X9f9qfxf794D9H/v///v//A/e/bV+p7W9//+b/v///+/7A7V6v/v///+//+/4D//V/wf///5/wf9Wf/8P///D/9//v///97f//1///+//9X+p/x3//wG9+v///+//8Of8C/b/N/U/X/RvhvX/z/9+//9vBP+P//+//f8A/b/Z//8H/K7//wf///4f//8X9f/7/p///8P///v//b8Hvv6t77///b+L/+z//+/Y/3/8B+b/p///4P8H/N///P///b//V//3f4f///77///4f///77//X///A//7///4f///7//A///v//b//j/g///9//5///+//9f+p///wX/+//d//r//D////Y/r/B/z///n///3//f/Y//f/R/4H////V/f//x/g///+/+W//e/+v///9H///e/1b///P///z/S///v///e///+//B//v9n/6///f////W///A//9/xv9H/B/6//P/r///N//N/wG9Wf6X///H////4f/6X////V///5f////v////X///X/v///Bf///v/B/4f////N///B/6//V////f////Wf/8P/d//X////f///X///9f+F/1/A//f/5f///f///P////4f////3//f////5f//f///x/t/xv9f/D////r///f////Y/r///f////4f///v///+////f///+//f///f////r////3////t/B///9/6///+//7///f////h////f///+/9f///9X////9v///+//5///f///B////r///O///e///+/+u///+//N////1///9v////f///+//N////e///+//9X//9//X////7////H/z////W//wG/M9H////X////X////X////Bf///f///4f///v///4f///v///4f///v///X///5f////X///v///7///+//f///f////4f////n///f////f///X////f///9v////9v///+//5///f///v///8P///B////9v///z///f///8P////7///P///H///v///N////9v///f///X///v////n///f///f////4f///f////v///+////X///+//P///U////6X////7////B/9f///+F/v///1///Bf///v////+F////f///8P///f///8P////5f//v///4f///B/+//Wf/8P/N///f/+//v////U///f////t////7///U///3////3////7///M///e///+/+//d////v////U////f///B////z///N///f////M///d////7////P////N////9v///f///X////3////3////f///+////X///f/+/+3////+H////4f////v////X///+//f///e////9v////U///8P////N////B/+//X////n////1///+F////4f///+//d//X/u/w/X/5f////X/B////+F////5f/+//V////7////f///v///7///f///3////3////f///9v///f///X///v///+f////t///B////f/9v////4f////V///8P///e///9v////v///+//9v////H////8P////7////n///f///A////z////M///H///M///H///v///B////9v///z///f////M////M///d///+////+H///+F////3////e///f////r////7///+//f////h///+//f////7////X///9f/5//u/f///+//1///+//h///+//B///+//+//+//w/u/P////5f////v////7////v////n///X////U////U////9v///f///z///+//3///f////1///A///9f////+/B////f//A////v/B///+v+E/u/V/X////B////f//V/r/N/Bf///f///5f//9f////8H///+//h////+//9f///9X////v////U////+F///+F///+//X////9v///+/+3///f/+/wH9v/Bf////v8Of8f////B////9f///7/5f////V/B/4f////z//Bf////v8B////7/Af/+//H/+//7/H////Bf///v////B////+X///f////h///+//+//B///+v////A////+/+//f/v////+H////f///+/+//f////h///+//h////8X////v////X///+v/h////v///+//X////7/D////B////8Of////9v///Bf/+//Wf/+/V/r/N//d/xv9//+//Y//f/R////+//N////Wf/W/W//v8O9e////r///f/v//f/v8W////r8G9X////O//V/5f/f////U////7///9f////O///9//A/u/N///8G///A////+/D////X/u///f/v///D////9f8H+V////F////8P///A///D/D///D9W/D/+//Y////H////8X/+//H///U///A////Y/+//h////8X////h///e///9f8H///+W///wH5X///5f6//W//9f////9//Bf/A////A////+v8B////f////3////n/r////v/X////X/r/t/H//A////8H///+//9v+3//A////v/X/+/Bf///e////7////+//N////f////X////N//v///v////v/N///W//+//e///+//X/r/u////WfD/+//U///U///A///Y//v///M////O////M////Y//O///+//9f//v///A////Y//u////M//e////8Of////f//f//f/d/Y////M////z////f////W//+//N////W//O///A////d/Y///A///9v//Y//O///v//Y/wX/+//X///u////M//9f////r/H///9f+7////9f/9f/O/9f/X////D//+//n////+//9f///O/A//A///A////+//n/n////+//e/X////+/+n/n///D/B////8Of////1////M//e////O/v//M////N//M////N////W/wW///M//v////9f/+/+//9v/+//B//+//1//Wf6//Wf////W//v////U//O///9//3///A///9f////u///+//n///9///d/A/u//N////+//e///f/r/9//9//X////D////r8O/X/B/v//M//X//A//A///A///9v/Y/wH////9v////3///X/9v////+/wW//N///f//n///9v+E//v8B////Y////X+v////O///f+v8H///9v////3////+/N////A///O////U/X///A//A////+//+/A////+//D////O///+//D////z///8H////r///Y////H///v///A////+/+v//X///f///8P////f///+f8H+v/f//M/8B////X+u/9f////X/9f///+F//8H///D///A////+//H///9//e///A///u//9f///8 Of///r///v/d/Y////D///M////d/A///A////d/O/wH////X////+/A//A////X////9v////U///+//O///f8H/9v////3///X///B/6//v/v////A//f////4Of////r///A////X///9f9f//X/9v//Y//O////+/+//X/9//u/u/X/+//X///9//d/r////X/D////O///8H/r///f//H///z////f////B////9v//+//3///+//+//f///+//B////z///+//8 Of////z///+//f////r/Bf////3////r/1f6////N/+//+/D////X/X////u/w//d////9f8G/O////1/r8B//9f///X///X/v/n/r8G//A//O///O///+//f////Bf///U///v8X////+//7///P////9v////U///8P////+//X///+v8W/+//X//v////N//9v/A//M///f/+//v////v////v///e///+//9X////N///W//v////B////U//v//r///9v////M///f//9X///M///f//O///v////v/v////u////U////N///W//9///+//f////7////X///9//n/X////+////U///9////M//f////f/+//U////A///+//z/X////O////f//e///B////U////9v///+////f////M////X////Bf///W//v///B///f///7////H/f///N////U///e////7////M///M//f///M///d////U////f////n///3////e///f/r///r///d/Y///v//B////9v////H///+//f////B////B////d////M///B///W////9v///M////X////Bf/W////9f8M/O///d////B//f////9//B//8f///+//r////9////r///W////v8O///9////X///9////M/9f8B///W//+//M//n///9///f+u/r////D//X///9f9W////9f+M////N////W////+//3///+//f//u/D///f//u////f////e////X///W//r///B///B///U//r////d////7///A////A//f///7////O//f////W//9///D///e///8P//v////+////f///d///+f///D////f////A///+//8 Of////v////B//f////f8N////+//3/D////M///U////v/u///d//d////7////O////N//9f//A//d/r8G///A////O////v8B///B////1///v/D///9////M////d/D////d/Y/wX/+//X/A//O///f/X////r/P////f///+//Bf/+//v////+u///d/+//M///M//e///+u///+H///f///A////Y/+//h///W///X////X///+f///N///W////X////f/D/u/+//+/A////+//9f8H///+f//f/1f8H////O////U/X/H////A///W/wH///d////O///f8N////+//B/+/+//e///+F///+//9v+E/u///f////M////X///O////3///v/9X///B/7///B/9///D///Y///+3////U///A//X///9////D///f//N/u/f///+//3///f////u////O////Bf///X///O/+//N////+//f///v//O///+//9X///B/f//v/9///+//f////7////X////d///+/f/w/+//M////U///9////O/e////8B///X///v/+//U//O////v//X///9//+/+//X///9//n///9////W///U////v8D///M////9v/X///A//M///f//d/u/X///u/r8B//A///A///d////8G///+////9v//f/U/r///A//A////d/Y///M//f+v////N///d////B///Y////+//7////7///+//f//u/D///f//u/n////r///f+n////f////u///+//9v/+//B//+//1//Wf/W/W//v/3/8D/r///W//v/X///8P///9f///A////Y//u////M/r/X/X////e////3//e/A////z//d//v///Wf///A/r///A//9////+//u/n/9//A///A//X///D///D/M///A//r///+///A//X///+/H///e///9//d////7/A///A////+//X/v/+//u////D////D////D////D////D///A////D////D////D////A=A" alt="TamaTama" class="tamtama_img">
-            </div>
-            <div class="btn-text">
-                <div class="btn-title">TamaTama</div>
-                <div class="btn-sub">Написать через Maks</div>
-            </div>
-        </a>
-
-        <a href="mailto:info@sl-company.ru" class="btn">
-            <div class="btn-icon" style="background: #f5f5f5;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="#616161"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </div>
-            <div class="btn-text">
-                <div class="btn-title">Почта</div>
-                <div class="btn-sub">info@sl-company.ru</div>
-            </div>
-        </a>
-
-        <div class="section-label">Наш адрес</div>
-
-        <div class="address-card">
-            <div style="color: #f44336; margin-top: 2px;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
-            </div>
-            <div class="address-info">
-                <h3>Тюмень, ул. Жуковского, 26</h3>
-                <p>Пн-Пт: 09:00 – 18:00</p>
-            </div>
-        </div>
-
-        <div class="map-wrapper">
-            <iframe 
-                src="https://yandex.ru/map-widget/v1/?ll=65.641377%2C57.173954&z=16&pt=65.641377%2C57.173954%2Cpm2rdl" 
-                width="100%" height="100%" frameborder="0" allowfullscreen="true">
-            </iframe>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>© 2026 СЛ компани. Все права защищены.</p>
-    </div>
-</div>
-
+  </div>
 </body>
 </html>
